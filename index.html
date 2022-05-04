@@ -82,6 +82,23 @@
       gtag("js", new Date());
 
       gtag("config", "UA-227908221-1");
+      gtag("config", "AW-10896169970");
+    </script>
+    <!-- Event snippet for Clicked on Join Button conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-10896169970/6-oECJX3troDEPK32cso",
+          event_callback: callback,
+        });
+        return false;
+      }
     </script>
   </head>
   <body>
@@ -103,6 +120,7 @@
         href="https://app.usebraintrust.com/r/andre39/"
         target="_blank"
         class="btn"
+        onclick="return gtag_report_conversion();"
         >Join</a
       >
     </div>
